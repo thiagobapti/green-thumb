@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Front End Test - Greenthumb</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/index.scss" />
+  </head>
+  <body>
+    <section class="hero">
+      <div class="container">
+        <img class="hero__logo" src="images/icons/logo-white.svg" alt="Greenthumb" />
+        <h1 class="hero__headline">Find your next green friend</h1>
+        <img class="hero__arrow" src="images/icons/arrow-down.svg" alt="Arrow down" />
+      </div>
+    </section>
+    <section class="filters">
+      <div class="filters__container container">
+        <div class="filters__filter">
+          <div class="filters__icon-wrapper">
+            <img class="filters__icon filters__icon--sun" src="images/illustrations/sun.png" alt="Sun" />
+          </div>
+          <div class="filters__description">
+            <strong>1.</strong> Set the amount of <strong>sunlight</strong> your plant will get.
+          </div>
+          <div id="sun" class="dropdown dropdown--closed">
+            <div class="dropdown__placeholder">
+              <span class="dropdown__text">Select...</span>
+              <img class="dropdown__icon" src="images/icons/chevron-down.svg" />
+            </div>
+            <ul class="dropdown__items">
+              <li class="dropdown__item" data-value="no">No sunlight</li>
+              <li class="dropdown__item" data-value="low">Low sunlight</li>
+              <li class="dropdown__item" data-value="high">High sunlight</li>
+            </ul>
+          </div>
+        </div>
+        <div class="filters__filter">
+          <div class="filters__icon-wrapper">
+            <img class="filters__icon filters__icon--wateringcan" src="images/illustrations/wateringcan.png" alt="Watering can" />
+          </div>
+          <div class="filters__description">
+            <strong>2.</strong> How often do you want to <strong>water</strong> your plant?
+          </div>
+          <div id="water" class="dropdown dropdown--closed">
+            <div class="dropdown__placeholder">
+              <span class="dropdown__text">Select...</span>
+              <img class="dropdown__icon" src="images/icons/chevron-down.svg" />
+            </div>
+            <ul class="dropdown__items">
+              <li class="dropdown__item" data-value="rarely">Rarely</li>
+              <li class="dropdown__item" data-value="regularly">Regularly</li>
+              <li class="dropdown__item" data-value="daily">Daily</li>
+            </ul>
+          </div>
+        </div>
+        <div class="filters__filter">
+          <div class="filters__icon-wrapper">
+            <img class="filters__icon filters__icon--dog" src="images/illustrations/dog.png" alt="Dog" />
+          </div>
+          <div class="filters__description">
+            <strong>3.</strong> Do you have pets? Do they <strong>chew</strong> plants?
+          </div>
+          <div id="pets" class="dropdown dropdown--closed">
+            <div class="dropdown__placeholder">
+              <span class="dropdown__text">Select...</span>
+              <img class="dropdown__icon" src="images/icons/chevron-down.svg" />
+            </div>
+            <ul class="dropdown__items">
+              <li class="dropdown__item" data-value="false">No/They don’t care</li>
+              <li class="dropdown__item" data-value="true">Yes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="results">
+      <div class="results__empty container">
+        <div class="results__empty-text">
+          <div class="results__empty-headline">No results yet…</div>
+          <div class="results__empty-message">Use the filters above to find the plant that best fits your environment :)</div>
+        </div>
+        <img class="results__empty-image" src="images/illustrations/no-results.png" alt="No results" />
+      </div>
+      <div class="results__container results__container--hidden">
+        <div class="container">
+          <img class="results__image" src="images/illustrations/pick.png" alt="Pick" />
+          <div class="results__headline">Our picks for you</div>
+        </div>
+        <div class="results__items">
+          <div class="results__item">
+            <div class="results__item-image-wrapper"></div>
+            <div class="results__item-footer">
+              <div class="results__item-name">Pablo</div>
+              <div class="results__item-specs">
+                <div class="results__item-price">$</div>
+                <div class="results__item-attributes">attr</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <button class="results__back-to-top" onclick="window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });">
+            back to the top
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="loading" aria-hidden>
+      <img class="loading__dog" src="images/illustrations/dog.png" alt="Dog" />
+    </section>
+    <script src="./js/scripts.js"></script>
+  </body>
+</html>

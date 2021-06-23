@@ -1,0 +1,31 @@
+// Breakpoints
+$mobile-max-width: 767px;
+$tablet-max-width: 1023px;
+$laptop-max-width: 1439px;
+
+// Colors
+$light-green: #75BC97;
+$dark-green: #15573F;
+$salmon: #FD9872;
+
+// Z-index
+$dropdown-z-index: 2;
+$loading-z-index: 3;
+
+@keyframes hero-arrow {
+  0% {
+    transform: unset;
+  }
+  100% {
+    transform: translateY(10%);
+  }
+}
+
+@keyframes loading-crazydog {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(-30deg) scale(1.2);
+  }
+}

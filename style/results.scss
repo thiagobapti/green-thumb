@@ -1,0 +1,250 @@
+.results {
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    padding: 47px 0;
+
+    @include tablet { flex-direction: row; }
+
+    &--hidden { display: none; }
+  }
+
+  &__empty-text {
+    @include tablet { flex: 1; }
+  }
+
+  &__empty-headline {
+    color: #A9A9A9;
+    font-size: 4.5rem;
+    font-weight: bold;
+    line-height: 5.5rem;
+  }
+
+  &__empty-message {
+    color: #A9A9A9;
+    font-size: 1.6rem;
+    line-height: 2.7rem;
+    margin-top: 16px;
+
+    @include tablet { max-width: 240px; }
+  }
+
+  &__empty-image {
+    display: block;
+    flex-shrink: 0;
+    height: 166px;
+    margin: 37px auto;
+    width: 86px;
+
+    @include tablet {
+      height: 205px;
+      margin: 0 190px 0 0;
+      width: 106px;
+    }
+  }
+
+  &__container {
+    padding: 32px 0 22px;
+
+    @include tablet { padding: 32px 0 128px; }
+
+    &--hidden { display: none; }
+  }
+
+  &__image {
+    height: 72px;
+    width: 146px;
+
+    @include tablet {
+      height: 78px;
+      width: 158px;
+    }
+  }
+
+  &__headline {
+    color: #0C261C;
+    font-size: 4.0rem;
+    font-weight: bold;
+    line-height: 4.9rem;
+    margin-top: 16px;
+
+    @include tablet {
+      font-size: 5.55rem;
+      line-height: 6.7rem;
+      margin-top: 20px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    margin: 16px 0 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    cursor: pointer;
+
+    @include tablet { margin: 54px 0 0; }
+
+    @include laptop {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin: 54px auto 0;
+      max-width: 900px;
+      overflow-x: unset;
+      overflow-y: unset;
+    }
+
+    &::-webkit-scrollbar {
+      background: transparent;
+      width: 0;
+    }
+  }
+
+  &__item {
+    background-color: #FFF;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin-left: 16px;
+    max-width: 240px;
+    padding: 22px 20px;
+    position: relative;
+    width: 70vw;
+
+    @include laptop {
+      width: 18%;
+      margin-left: 3.3%;
+    }
+
+    &:first-of-type {
+      &:before {
+        background-color: $light-green;
+        border-bottom-right-radius: 34px;
+        border-top-right-radius: 34px;
+        color: #FFF;
+        content: '✨ Staff favorite';
+        font-size: 1.28rem;
+        font-weight: bold;
+        left: 0;
+        line-height: 1.6rem;
+        padding: 10px 16px;
+        position: absolute;
+        top: 20px;
+
+        @include tablet {
+          border-bottom-right-radius: 43px;
+          border-top-right-radius: 43px;
+        }
+      }
+    }
+
+    &:first-of-type {
+      margin-left: 27px;
+
+      @include laptop { margin-left: unset; }
+    }
+
+    &:nth-child(4n-7) {
+      @include laptop { margin-left: unset; }
+    }
+
+    &:nth-child(n+5) {
+      @include laptop { margin-top: 20px; }
+    }
+  }
+
+  &__item-name {
+    color: $dark-green;
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 2.8rem;
+
+    @include tablet {
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+    }
+  }
+
+  &__item-specs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 14px;
+  }
+
+  &__item-price {
+    color: $dark-green;
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 2.8rem;
+  }
+
+  &__item-image-wrapper {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    width:100%;
+
+    @include laptop { min-height: 226px; }
+  }
+
+  &__item-image { width: 100%; }
+
+  &__item-attributes {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__item-attribute {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    background-size: contain;
+    height: 28px;
+    margin-left: 6px;
+    width: 28px;
+
+    &--sun-no { background-image: url(../images/icons/no-sun.svg); }
+    &--sun-low {background-image: url(../images/icons/low-sun.svg);}
+    &--sun-high {background-image: url(../images/icons/high-sun.svg);}
+    &--pets-true {background-image: url(../images/icons/pet.svg);}
+    &--pets-false {background-image: url(../images/icons/toxic.svg);}
+    &--water-rarely {background-image: url(../images/icons/1-drop.svg);}
+    &--water-regularly {background-image: url(../images/icons/2-drops.svg);}
+    &--water-daily {background-image: url(../images/icons/3-drops.svg);}
+  }
+
+  &__back-to-top {
+    align-items: center;
+    background: transparent;
+    border-radius: 25px;
+    border: 1px solid $dark-green;
+    color: $dark-green;
+    cursor: pointer;
+    display: flex;
+    font-size: 1.6rem;
+    font-weight: 300;
+    height: 50px;
+    justify-content: center;
+    line-height: 2rem;
+    margin-top: 32px;
+    outline: none;
+    transition: background .3s, color .3s;
+    width: 100%;
+    will-change: background, color;
+
+    &:hover {
+      background: $dark-green;
+      color: #FFF;
+    }
+
+    @include tablet { margin-top: 59px; }
+  }
+
+  &__back-to-top-icon {
+    height: 21px;
+    margin-right: 16px;
+  }
+}

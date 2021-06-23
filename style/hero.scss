@@ -1,0 +1,59 @@
+.hero {
+  background-color: $light-green;
+  background-image: url('../images/hero/mobile/mobile-leaves.png'), url('../images/hero/mobile/mobile-plantperson.png');
+  background-position: bottom 100% center, right 27% bottom 4.2%;
+  background-repeat: no-repeat;
+  background-size: 100% auto, 73% auto;
+  height: 100vh;
+
+  @include tablet {
+    background-position: top -60vw center, center bottom 4.2%;
+    background-size: 100% auto, 50vh auto;
+  }
+
+  @include laptop {
+    background-image: url('../images/hero/desktop/right-leaves.png'), url('../images/hero/desktop/left-leaves.png'), url('../images/hero/desktop/plantperson.png');
+    background-position: center right -11vw, center left -26.5vw, right 26.5% center;
+    background-size: 36vw auto, 88vw auto, auto 80%;
+    height: 500px;
+  }
+
+  @include desktop {
+    background-position: center right, center left, right 27.5% center;
+    background-size: 25% auto, 60vw auto, auto 85%;
+  }
+
+  &__logo {
+    height: auto;
+    margin-top: 36px;
+    width: 163px;
+
+    @include tablet {
+      margin-top: 57px;
+      width: 209px;
+    }
+  }
+
+  &__headline {
+    color: #FFFFFF;
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 4.9rem;
+    margin: 31px 0 0;
+    max-width: 251px;
+
+    @include laptop {
+      font-size: 7rem;
+      line-height: 8.5rem;
+      margin: 42px 0 0;
+      max-width: 400px;
+    }
+  }
+
+  &__arrow {
+    animation: hero-arrow 1s ease-in infinite alternate-reverse;
+    margin-top: 16px;
+
+    @include tablet { margin-top: 31px; }
+  }
+}

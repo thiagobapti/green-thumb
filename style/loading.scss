@@ -1,0 +1,23 @@
+.loading {
+  background-color: rgba(#000, .5);
+  bottom: 0;
+  display: none;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: $loading-z-index;
+
+  &--visible {
+    align-items: center;
+    display: block;
+    display:flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  &__dog {
+    animation: loading-crazydog .2s ease-in infinite alternate;
+    width: 100px;
+  }
+}
